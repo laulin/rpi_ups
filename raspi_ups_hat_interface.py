@@ -38,5 +38,5 @@ class RaspiUPSHatInterface:
         return capacity
 
     def __str__(self):
-        return "{0} @ {1:#x} (MAX17043) : {2:.2f} V, {3:.1f}% ".format(self._file, self._device_address, ups.read_voltage(), int(ups.read_capacity()))
+        return "{0} @ {1:#x} (MAX17043) : {2:.2f} V, {3:.1f}% ".format(self._file, self._device_address, self.read_voltage(), int(self.read_capacity()))
 
