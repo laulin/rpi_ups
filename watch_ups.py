@@ -21,7 +21,7 @@ from raspi_ups_hat_interface import RaspiUPSHatInterface
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Watch Raspi UPS hat capacity and do action regarding the SOC. Designed by laulin')
-    parser.add_argument('-t', '--timer', type=int, default=10, help='The loop time between two poll')
+    parser.add_argument('-i', '--interval', type=int, default=10, help='The loop time between two poll')
     parser.add_argument('-ops', '--operator', choices=['less', 'more'], help='Define the operator apply between the value and the SOC')
     parser.add_argument('-v', '--value', type=int,
                         help='Define the compared value with the SOC, in percent')
@@ -54,4 +54,4 @@ if __name__ == "__main__":
         elif args.operator == 'more':
             check_more_than(ups, args.value, args.action)
 
-        sleep(args.timer)
+        sleep(args.interval)
